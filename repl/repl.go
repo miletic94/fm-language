@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/miletic94/fm-language/lexer"
-	"github.com/miletic94/fm-language/parser"
+	"fm-language/lexer"
+	"fm-language/parser"
 )
 
 const PROMPT = ">> "

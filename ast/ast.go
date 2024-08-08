@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/miletic94/fm-language/token"
+	"fm-language/token"
 )
 
 type Node interface {

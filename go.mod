@@ -1,3 +1,3 @@
-module github.com/miletic94/fm-language
+module fm-language
 
 go 1.22.5

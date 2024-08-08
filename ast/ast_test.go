@@ -3,7 +3,7 @@ package ast
 import (
 	"testing"
 
-	"github.com/miletic94/fm-language/token"
+	"fm-language/token"
 )
 
 func TestString(t *testing.T) {

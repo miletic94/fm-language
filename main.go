@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/user"
 
-	"github.com/miletic94/fm-language/repl"
+	"fm-language/repl"
 )
 
 func main() {

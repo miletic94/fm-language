@@ -1,6 +1,6 @@
 package lexer
 
-import "github.com/miletic94/fm-language/token"
+import "fm-language/token"
 
 type Lexer struct {
 	input        string
