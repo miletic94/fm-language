@@ -64,6 +64,9 @@ func (l *Lexer) NextToken() token.Token {
 		tok = newToken(token.LBRACE, l.ch)
 	case '}':
 		tok = newToken(token.RBRACE, l.ch)
+	case '"':
+		tok.Type = token.STRING
+		tok.Literal = l.readString()
 	case 0:
 		tok.Literal = ""
 		tok.Type = token.EOF
@@ -140,4 +143,17 @@ func (l *Lexer) makeTwoCharToken(tokenType token.TokenType) token.Token {
 	ch := l.ch
 	l.readChar()
 	return token.Token{Type: tokenType, Literal: string(ch) + string(l.ch)}
+}
+
+// TODO: Add support for character escaping so that string literals like
+// "hello \"world\"", "hello\n world" and "hello\t\t\tworld" work
+func (l *Lexer) readString() string {
+	position := l.position + 1
+	for {
+		l.readChar()
+		if l.ch == '"' || l.ch == 0 {
+			break
+		}
+	}
+	return l.input[position:l.position]
 }
